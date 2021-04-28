@@ -3,7 +3,7 @@ const employee = require ('../lib/Employee');
 const engineer = require ('../lib/Engineer');
 const intern = require('../lib/Intern');
 const manager = require('../lib/Manager');
-const teamGen = require('../dist/team.js')
+const teamGen = require('./team.js')
 const teamMem = [];
 const fs = require('fs');
 
@@ -11,14 +11,14 @@ const questions = [
     {
         type: 'list',
         name: 'title',
-        message: "What is your position?",
+        message: "Select a new position:",
         choices: ['Engineer', 'Intern', 'Manager', 'None to add'],
         default: 'Employee',
     },
     {
         type: 'name',
         name: 'name',
-        message: "What is your name?",
+        message: "What is their name?",
         when: function(data){
             if(data.title == 'None to add'){
                 return false;
@@ -28,7 +28,7 @@ const questions = [
     {
         type: 'input',
         name: 'id',
-        message: "What is your id?",
+        message: "What is their id?",
         when: function(data){
             if(data.title == 'None to add'){
                 return false;
@@ -38,7 +38,7 @@ const questions = [
     {
         type: 'input',
         name: 'email',
-        message: "What is your email?",
+        message: "What is their email?",
         when: function(data){
             if(data.title == 'None to add'){
                 return false;
@@ -48,7 +48,7 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'What is your GitHub?',
+        message: 'What is their GitHub?',
         when: function (data) {
             if (data.title == 'Engineer') {
                 return true;
@@ -59,7 +59,7 @@ const questions = [
     {
         type: 'input',
         name: 'office',
-        message: 'What is your Office location?',
+        message: 'Where is their office located?',
         when: function (data) {
             if (data.title == 'Manager') {
                 return true;
@@ -70,7 +70,7 @@ const questions = [
     {
         type: 'input',
         name: 'school',
-        message: 'What school do you attend?',
+        message: 'What school do they attend?',
         when: function (data) {
             if (data.title == 'Intern') {
                 return true;
