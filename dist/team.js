@@ -26,15 +26,26 @@ function link(teamMem){
 }
 
 const card = (info) => {
+    let manage = "";
+    let engine = "";
+    let intrn = "";
+    if(info.getRole() == "Manager") {
+        manage = `<p>${info.officeNumber}</p>`
+    } else if(info.getRole() == "Engineer") {
+        engine = `<a href="https://github.com/${info.github}">${info.github}</a>`
+    } else if(info.getRole() =="Intern") {
+        intrn = `<p>${info.school}</p>`;
+    }
+
     return `<div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${info.getRole()}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${info.name}</h6>
                 <p class="card-text">${info.id}</p>
                 <a href="mailto:${info.email}" class="card-text">${info.email}</a>
-                <p>${info.office}</p>
-                <a href="https://github.com/${info.github}">${info.github}</a>
-                <p>${info.school}</p>
+                ${manage}
+                ${engine}
+                ${intrn}  
             </div>
         </div>`
 }

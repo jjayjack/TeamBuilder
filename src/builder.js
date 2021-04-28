@@ -89,15 +89,15 @@ function addTeam() {
             if (response.title !== "None to add") {
                 switch (response.title){
                     case "Engineer": 
-                    let dweeb = new engineer(response.name, response.id, response.email, response.github); 
-                        teamMem.push(dweeb);
+                    let neer = new engineer(response.name, response.id, response.email, response.github); 
+                        teamMem.push(neer);
                         break;
                     case "Intern":
                     let unknown = new intern(response.name, response.id, response.email, response.school);
                         teamMem.push(unknown);
                         break;
                     case "Manager":
-                    let unqualified = new manager(response.name, response.id, response.email, response.officeNumber);
+                    let unqualified = new manager(response.name, response.id, response.email, response.office);
                         teamMem.push(unqualified);
                         break;
                 };
