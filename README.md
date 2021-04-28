@@ -20,6 +20,9 @@
   
   
   ## Screenshots:
+  Screenshot of finished application 
+  ![image](https://user-images.githubusercontent.com/79474830/116353615-b2c6df00-a7bc-11eb-9a52-0b0a25c01422.png)
+
   Showcase of application running on node
   ![zy7L79ciNS](https://user-images.githubusercontent.com/79474830/116348897-83ac6f80-a7b4-11eb-841b-b83dfad5abc6.gif)
   
