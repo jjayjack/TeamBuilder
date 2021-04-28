@@ -11,7 +11,7 @@ const generateTeam = (data) => {
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid head">
     <h1>My Team</h1>
     </div>
     <div class="body">
