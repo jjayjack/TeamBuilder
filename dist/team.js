@@ -23,17 +23,17 @@ function link(teamMem){
         boots += card(member);
     });
     return generateTeam(boots);
-    
 }
+
 const card = (info) => {
     return `<div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">${info.title}</h5>
+                <h5 class="card-title">${info.getRole()}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${info.name}</h6>
                 <p class="card-text">${info.id}</p>
-                <p class="card-text">${info.email}</p>
+                <a href="mailto:${info.email}" class="card-text">${info.email}</a>
                 <p>${info.office}</p>
-                <p>${info.github}</p>
+                <a href="https://github.com/${info.github}">${info.github}</a>
                 <p>${info.school}</p>
             </div>
         </div>`

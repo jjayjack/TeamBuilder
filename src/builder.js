@@ -1,8 +1,8 @@
 const inquirer = require('inquirer')
-// const employee = require ('../lib/Employee');
-// const engineer = require ('../lib/Engineer');
-// const intern = require('../lib/Intern');
-// const manager = require('../lib/Manager');
+const employee = require ('../lib/Employee');
+const engineer = require ('../lib/Engineer');
+const intern = require('../lib/Intern');
+const manager = require('../lib/Manager');
 const teamGen = require('../dist/team.js')
 const teamMem = [];
 const fs = require('fs');
@@ -87,11 +87,23 @@ function addTeam() {
         .prompt(questions)
         .then((response) => {
             if (response.title !== "None to add") {
-                teamMem.push(response);
-                console.log(teamMem);
+                switch (response.title){
+                    case "Engineer": 
+                    let dweeb = new engineer(response.name, response.id, response.email, response.github); 
+                        teamMem.push(dweeb);
+                        break;
+                    case "Intern":
+                    let unknown = new intern(response.name, response.id, response.email, response.school);
+                        teamMem.push(unknown);
+                        break;
+                    case "Manager":
+                    let unqualified = new manager(response.name, response.id, response.email, response.officeNumber);
+                        teamMem.push(unqualified);
+                        break;
+                };
                 addTeam();
             } else {
-                writeToFile('createdTeam.html', teamGen(teamMem))
+                writeToFile('dist/createdTeam.html', teamGen(teamMem));
             }
         })
 };
@@ -103,4 +115,4 @@ function writeToFile(fileName, data) {
     })
 }
 
-addTeam();
+module.exports = addTeam;
