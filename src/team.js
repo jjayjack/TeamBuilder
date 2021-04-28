@@ -8,10 +8,14 @@ const generateTeam = (data) => {
     <title>Our Team</title>
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container-fluid">
-       ${data}
+    <h1>My Team</h1>
+    </div>
+    <div class="body">
+            ${data}
     </div>
 </body>
 </html>`
@@ -37,12 +41,12 @@ const card = (info) => {
         intrn = `<p>${info.school}</p>`;
     }
 
-    return `<div class="card" style="width: 18rem;">
+    return `<div class="col card member" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">${info.getRole()}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${info.name}</h6>
-                <p class="card-text">${info.id}</p>
-                <a href="mailto:${info.email}" class="card-text">${info.email}</a>
+                <h1 class="card-title">${info.getRole()}</h1>
+                <h2 class="card-subtitle mb-2 text-muted">${info.name}</h2>
+                <p class="card-text">Id: ${info.id}</p>
+                <a href="mailto:${info.email}" class="card-text">Email: ${info.email}</a>
                 ${manage}
                 ${engine}
                 ${intrn}  
